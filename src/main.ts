@@ -135,13 +135,16 @@ let focusedBody: BodyId | null = null;
 let macroT = 0;
 let targetMacroT = 0;
 
-// Smooth camera flight interpolation
+// Smooth camera flight interpolation (supports C∞ Quadratic Bezier macro-dive!)
 interface CameraFlight {
   active: boolean;
+  isMacroDive: boolean;
   startTime: number;
   duration: number;
   startPos: THREE.Vector3;
+  midPos: THREE.Vector3;
   startTarget: THREE.Vector3;
+  midTarget: THREE.Vector3;
   endPos: THREE.Vector3;
   endTarget: THREE.Vector3;
   startMacroT: number;
@@ -150,10 +153,13 @@ interface CameraFlight {
 
 const flight: CameraFlight = {
   active: false,
+  isMacroDive: false,
   startTime: 0,
   duration: 2.2,
   startPos: new THREE.Vector3(),
+  midPos: new THREE.Vector3(0, 10, 18),
   startTarget: new THREE.Vector3(),
+  midTarget: new THREE.Vector3(0, 0, 0),
   endPos: new THREE.Vector3(),
   endTarget: new THREE.Vector3(),
   startMacroT: 0,
@@ -242,10 +248,14 @@ function startFlight(
   duration: number,
 ) {
   flight.active = true;
+  flight.isMacroDive = Math.abs(endMacroT - macroT) > 0.5;
   flight.startTime = performance.now() * 0.001;
-  flight.duration = duration;
+  flight.duration = flight.isMacroDive ? Math.max(duration, 4.2) : duration;
   flight.startPos.copy(camera.position);
   flight.startTarget.copy(controls.target);
+  // Midpoint dives deep into the Orion Arm right toward the glowing Sol beacon at (0,0,0)
+  flight.midPos.set(0, 9.5, 19.0);
+  flight.midTarget.set(0, 0, 0);
   flight.endPos.copy(endPos);
   flight.endTarget.copy(endTarget);
   flight.startMacroT = macroT;
@@ -458,7 +468,7 @@ function animate() {
   const elapsed = now - startTime;
 
   // Update Solar System first so live planet & Galilean moon world positions are up-to-date
-  const solarVisibility = smoothstep(0.45, 0.85, macroT);
+  const solarVisibility = smoothstep(0.42, 0.88, macroT);
   const showJupMoonOrbits = currentMode === 'body' && focusedBody === 'jupiter';
   solarSystem.update(elapsed, solarVisibility, camera, currentMode === 'solar', showJupMoonOrbits);
 
@@ -475,8 +485,26 @@ function animate() {
       flight.endTarget.copy(livePose.target);
     }
 
-    camera.position.lerpVectors(flight.startPos, flight.endPos, eased);
-    controls.target.lerpVectors(flight.startTarget, flight.endTarget, eased);
+    if (flight.isMacroDive) {
+      // Smooth C∞ Quadratic Bezier plunge through the Orion Arm into/out of the Solar System
+      const inv = 1 - eased;
+      const w0 = inv * inv;
+      const w1 = 2 * inv * eased;
+      const w2 = eased * eased;
+      camera.position
+        .set(0, 0, 0)
+        .addScaledVector(flight.startPos, w0)
+        .addScaledVector(flight.midPos, w1)
+        .addScaledVector(flight.endPos, w2);
+      controls.target
+        .set(0, 0, 0)
+        .addScaledVector(flight.startTarget, w0)
+        .addScaledVector(flight.midTarget, w1)
+        .addScaledVector(flight.endTarget, w2);
+    } else {
+      camera.position.lerpVectors(flight.startPos, flight.endPos, eased);
+      controls.target.lerpVectors(flight.startTarget, flight.endTarget, eased);
+    }
     camera.lookAt(controls.target);
 
     if (raw >= 1) {

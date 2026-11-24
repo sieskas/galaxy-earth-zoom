@@ -1539,7 +1539,14 @@ export function createSolarSystem(): SolarSystem {
   const getBodyWorldPosition = (id: BodyId, target: THREE.Vector3): THREE.Vector3 => {
     const node = nodeMap.get(id);
     if (!node) return target.set(0, 0, 0);
-    return node.bodyGroup.getWorldPosition(target);
+    // Compute unscaled logical position so camera flights during macro-bloom never jump
+    if (node.info.parent) {
+      const parentNode = nodeMap.get(node.info.parent);
+      if (parentNode) {
+        return target.copy(parentNode.bodyGroup.position).add(node.bodyGroup.position);
+      }
+    }
+    return target.copy(node.bodyGroup.position);
   };
 
   const getBodyInfo = (id: BodyId): BodyInfo => {
@@ -1554,7 +1561,9 @@ export function createSolarSystem(): SolarSystem {
     showJupiterMoonOrbits = false,
   ) => {
     group.visible = visibility > 0.002;
-    group.scale.setScalar(1.0);
+    // Blossom smoothly from the glowing Sol point (0.012 -> 1.0) during Galaxy <-> Solar System dive!
+    const bloomScale = visibility >= 0.995 ? 1.0 : 0.012 + 0.988 * Math.pow(Math.max(visibility, 0.0001), 2.1);
+    group.scale.setScalar(bloomScale);
 
     sunMat.uniforms.uTime.value = elapsed;
     sunMat.uniforms.uOpacity.value = visibility;
