@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milky Way → Solar System → Earth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <!-- Minimal planet telemetry card (visible only when inspecting a body) -->
+    <aside id="body-card" class="body-card" aria-live="polite" data-visible="false">
+      <div class="body-card-header">
+        <span class="body-dot" id="card-dot"></span>
+        <span class="body-name" id="card-name">Terre</span>
+      </div>
+      <p class="body-summary" id="card-summary">Océans liquides · Atmosphère azote-oxygène</p>
+      <dl class="body-metrics">
+        <div>
+          <dt>DIST.</dt>
+          <dd id="card-distance">1,00 UA</dd>
+        </div>
+        <div>
+          <dt>RAYON</dt>
+          <dd id="card-radius">6 371 km</dd>
+        </div>
+        <div>
+          <dt>ORBITE</dt>
+          <dd id="card-period">365,25 j</dd>
+        </div>
+      </dl>
+    </aside>
+
+    <!-- Bottom restrained navigation HUD -->
+    <div id="hud">
+      <nav id="moon-bar" class="moon-bar" aria-label="Lunes galiléennes de Jupiter" data-visible="false"></nav>
+      <nav id="planet-bar" class="planet-bar" aria-label="Planètes du Système Solaire" data-visible="false"></nav>
+
+      <div class="hud-main">
+        <div class="telemetry" aria-live="polite">
+          <span class="telemetry-label" id="location-label">VOIE LACTÉE</span>
+          <span class="telemetry-sep" aria-hidden="true">·</span>
+          <span class="telemetry-value" id="distance-readout">52 000 al</span>
+        </div>
+
+        <div class="scale-switch" role="group" aria-label="Échelle de vue">
+          <button type="button" class="scale-btn" data-mode="galaxy">Voie Lactée</button>
+          <button type="button" class="scale-btn" data-mode="solar">Système Solaire</button>
+          <button type="button" class="scale-btn" data-mode="earth">Terre</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
