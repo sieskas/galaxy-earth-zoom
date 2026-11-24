@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,41 +18,41 @@
     <aside id="body-card" class="body-card" aria-live="polite" data-visible="false">
       <div class="body-card-header">
         <span class="body-dot" id="card-dot"></span>
-        <span class="body-name" id="card-name">Terre</span>
+        <span class="body-name" id="card-name">Earth</span>
       </div>
-      <p class="body-summary" id="card-summary">Océans liquides · Atmosphère azote-oxygène</p>
+      <p class="body-summary" id="card-summary">Liquid oceans · Nitrogen-oxygen atmosphere</p>
       <dl class="body-metrics">
         <div>
           <dt>DIST.</dt>
-          <dd id="card-distance">1,00 UA</dd>
+          <dd id="card-distance">1.00 AU</dd>
         </div>
         <div>
-          <dt>RAYON</dt>
-          <dd id="card-radius">6 371 km</dd>
+          <dt>RADIUS</dt>
+          <dd id="card-radius">6,371 km</dd>
         </div>
         <div>
-          <dt>ORBITE</dt>
-          <dd id="card-period">365,25 j</dd>
+          <dt>ORBIT</dt>
+          <dd id="card-period">365.25 d</dd>
         </div>
       </dl>
     </aside>
 
     <!-- Bottom restrained navigation HUD -->
     <div id="hud">
-      <nav id="moon-bar" class="moon-bar" aria-label="Lunes galiléennes de Jupiter" data-visible="false"></nav>
-      <nav id="planet-bar" class="planet-bar" aria-label="Planètes du Système Solaire" data-visible="false"></nav>
+      <nav id="moon-bar" class="moon-bar" aria-label="Galilean moons of Jupiter" data-visible="false"></nav>
+      <nav id="planet-bar" class="planet-bar" aria-label="Solar System planets" data-visible="false"></nav>
 
       <div class="hud-main">
         <div class="telemetry" aria-live="polite">
-          <span class="telemetry-label" id="location-label">VOIE LACTÉE</span>
+          <span class="telemetry-label" id="location-label">MILKY WAY</span>
           <span class="telemetry-sep" aria-hidden="true">·</span>
-          <span class="telemetry-value" id="distance-readout">52 000 al</span>
+          <span class="telemetry-value" id="distance-readout">52,000 ly</span>
         </div>
 
-        <div class="scale-switch" role="group" aria-label="Échelle de vue">
-          <button type="button" class="scale-btn" data-mode="galaxy">Voie Lactée</button>
-          <button type="button" class="scale-btn" data-mode="solar">Système Solaire</button>
-          <button type="button" class="scale-btn" data-mode="earth">Terre</button>
+        <div class="scale-switch" role="group" aria-label="Scale view">
+          <button type="button" class="scale-btn" data-mode="galaxy">Milky Way</button>
+          <button type="button" class="scale-btn" data-mode="solar">Solar System</button>
+          <button type="button" class="scale-btn" data-mode="earth">Earth</button>
         </div>
       </div>
     </div>

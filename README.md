@@ -1,33 +1,35 @@
 # Milky Way → Solar System → Earth (Three.js + GLSL)
 
-Expérience web 3D interactive construite avec **Vite + TypeScript + Three.js + shaders GLSL custom** et validée par une boucle visuelle **Generator – Evaluator**.
+Interactive 3D web experience built with **Vite + TypeScript + Three.js + custom GLSL shaders**, iteratively refined through an automated **Generator–Evaluator** visual QA loop.
 
-## Fonctionnalités
+**Live Demo:** https://www.romain-godard.com/demos/galaxy/index.html
 
-- **Voie Lactée spirale** : 175 000 étoiles anti-aliasées (zéro scintillement sous-pixel), gaz volumétrique gaussien, bandes de poussières sombres, cœur doré-ambré et ciel profond `#020308`.
-- **Système Solaire complet** :
-  - **Soleil vivant** : granulation cellulaire Voronoi 3D lave/plasma (façon NASA DKIST / SDO), taches solaires, filaments magnétiques additifs, chromosphère 3D volumétrique et **7 arches d'éruptions solaires 3D animées**.
-  - **8 planètes en textures 2K réelles** : Mercure, Vénus, Terre (5 textures HD : jour, nuit/villes, nuages + ombres portées, relief, spéculaire + halo Fresnel + Lune), Mars, Jupiter, Saturne (anneaux avec division de Cassini + ombre réelle), Uranus (inclinée à 97,8° + anneaux) et Neptune.
-  - **4 lunes galiléennes** en orbite autour de Jupiter : **Io, Europe, Ganymède et Callisto** (cliquables et explorables).
-  - **Ceinture d'astéroïdes** entre Mars et Jupiter.
-- **Navigation cinématique** :
-  - Sélecteur d'échelle (`Voie Lactée` | `Système Solaire` | `Terre`), barre des planètes, sous-barre des lunes galiléennes et **clic direct en 3D** sur n'importe quel astre.
-  - Raccourcis : `Espace` (changer d'échelle), `Échap` (retour Système Solaire), souris (orbite + zoom).
-  - Accès direct par URL : `?view=galaxy`, `?view=solar`, `?view=sun`, `?view=saturn`, `?view=jupiter`, `?view=io`, `?view=earth`, `?view=mars`, etc.
+## Features
 
-## Lancer en local
+- **Spiral Milky Way**: 175,000 anti-aliased stars (zero sub-pixel shimmer), Gaussian volumetric gas clouds, dark dust lanes, golden-amber galactic bar, and `#020308` linear-calibrated deep space.
+- **Full Solar System**:
+  - **Living Sun**: 3D Voronoi cellular lava/plasma granulation (NASA DKIST / SDO inspired), sunspots, additive magnetic filaments, volumetric 3D chromosphere, and **7 animated 3D solar prominence flare arches**.
+  - **All 8 Planets with real 2K textures**: Mercury, Venus, Earth (5 HD textures: day, city night lights, clouds + cast shadows, normal, ocean specular + Fresnel limb + Moon), Mars, Jupiter, Saturn (Cassini Division rings + analytic shadows), Uranus (97.8° axial tilt + icy rings), and Neptune.
+  - **4 Galilean Moons** orbiting Jupiter: **Io, Europa, Ganymede, and Callisto** (clickable & explorable).
+  - **Asteroid Belt** between Mars and Jupiter.
+- **Cinematic Navigation**:
+  - Scale switcher (`Milky Way` | `Solar System` | `Earth`), planet bar, Galilean moons sub-bar, and **direct 3D click** on any celestial body.
+  - Shortcuts: `Space` (switch scale), `Esc` (return to Solar System), mouse (orbit + zoom).
+  - Direct deep links: `?view=galaxy`, `?view=solar`, `?view=sun`, `?view=saturn`, `?view=jupiter`, `?view=io`, `?view=earth`, `?view=mars`, etc.
+
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build de production :
+Production build:
 
 ```bash
 npm run build
 ```
 
-## Crédits textures
+## Texture Credits
 
-- Textures planétaires 2K : [Solar System Scope](https://www.solarsystemscope.com/textures/) (CC BY 4.0) & NASA / Three.js examples.
+- 2K planetary textures: [Solar System Scope](https://www.solarsystemscope.com/textures/) (CC BY 4.0) & NASA / Three.js examples.

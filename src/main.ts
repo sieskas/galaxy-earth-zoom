@@ -106,7 +106,7 @@ for (const body of MAIN_BODIES) {
 
 const moonLabel = document.createElement('span');
 moonLabel.className = 'moon-bar-label';
-moonLabel.textContent = 'LUNES GALILÉENNES';
+moonLabel.textContent = 'GALILEAN MOONS';
 moonBar.appendChild(moonLabel);
 
 for (const moon of GALILEAN_MOONS) {
@@ -279,12 +279,12 @@ function updateUI() {
   }
 
   if (currentMode === 'galaxy') {
-    locationLabel.textContent = 'VOIE LACTÉE';
-    distanceReadout.textContent = '52 000 al';
+    locationLabel.textContent = 'MILKY WAY';
+    distanceReadout.textContent = '52,000 ly';
     bodyCard.dataset.visible = 'false';
   } else if (currentMode === 'solar') {
-    locationLabel.textContent = 'SYSTÈME SOLAIRE';
-    distanceReadout.textContent = '8 PLANÈTES · 30 UA';
+    locationLabel.textContent = 'SOLAR SYSTEM';
+    distanceReadout.textContent = '8 PLANETS · 30 AU';
     bodyCard.dataset.visible = 'false';
   } else if (focusedBody) {
     const info = solarSystem.getBodyInfo(focusedBody);

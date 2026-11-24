@@ -48,55 +48,55 @@ export interface SolarSystem {
 export const SOLAR_BODIES: BodyInfo[] = [
   {
     id: 'sun',
-    name: 'Soleil',
+    name: 'Sun',
     accent: '#FFBE5C',
     orbitRadius: 0,
     radius: 3.4,
     orbitSpeed: 0,
     initialAngle: 0,
-    distanceLabel: '0,00 UA',
-    radiusLabel: '696 340 km',
-    periodLabel: '25,4 j (rot.)',
-    summary: 'Étoile naine jaune (G2V) · Photosphère 5 500 °C',
+    distanceLabel: '0.00 AU',
+    radiusLabel: '696,340 km',
+    periodLabel: '25.4 d (rot.)',
+    summary: 'G2V Yellow Dwarf · 5,500 °C Photosphere',
   },
   {
     id: 'mercury',
-    name: 'Mercure',
+    name: 'Mercury',
     accent: '#A9A29A',
     orbitRadius: 9.5,
     radius: 0.46,
     orbitSpeed: 0.095,
     initialAngle: 0.7,
-    distanceLabel: '0,39 UA',
-    radiusLabel: '2 440 km',
-    periodLabel: '88 jours',
-    summary: 'Tellurique · Surface cratérisée MESSENGER',
+    distanceLabel: '0.39 AU',
+    radiusLabel: '2,440 km',
+    periodLabel: '88 days',
+    summary: 'Terrestrial · MESSENGER cratered surface',
   },
   {
     id: 'venus',
-    name: 'Vénus',
+    name: 'Venus',
     accent: '#E3B97A',
     orbitRadius: 14.2,
     radius: 0.88,
     orbitSpeed: 0.068,
     initialAngle: 2.35,
-    distanceLabel: '0,72 UA',
-    radiusLabel: '6 052 km',
-    periodLabel: '225 jours',
-    summary: 'Atmosphère dense · Nuages d’acide sulfurique',
+    distanceLabel: '0.72 AU',
+    radiusLabel: '6,052 km',
+    periodLabel: '225 days',
+    summary: 'Dense atmosphere · Sulfuric acid clouds',
   },
   {
     id: 'earth',
-    name: 'Terre',
+    name: 'Earth',
     accent: '#5CA9FF',
     orbitRadius: 20.5,
     radius: 1.25,
     orbitSpeed: 0.048,
     initialAngle: -0.62,
-    distanceLabel: '1,00 UA',
-    radiusLabel: '6 371 km',
-    periodLabel: '365,25 jours',
-    summary: 'Océans liquides · Atmosphère azote-oxygène',
+    distanceLabel: '1.00 AU',
+    radiusLabel: '6,371 km',
+    periodLabel: '365.25 days',
+    summary: 'Liquid oceans · Nitrogen-oxygen atmosphere',
   },
   {
     id: 'mars',
@@ -106,10 +106,10 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 0.74,
     orbitSpeed: 0.036,
     initialAngle: 1.18,
-    distanceLabel: '1,52 UA',
-    radiusLabel: '3 390 km',
-    periodLabel: '687 jours',
-    summary: 'Tellurique · Valles Marineris & calottes polaires',
+    distanceLabel: '1.52 AU',
+    radiusLabel: '3,390 km',
+    periodLabel: '687 days',
+    summary: 'Terrestrial · Valles Marineris & polar ice caps',
   },
   {
     id: 'jupiter',
@@ -119,23 +119,23 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 2.65,
     orbitSpeed: 0.022,
     initialAngle: -2.65,
-    distanceLabel: '5,20 UA',
-    radiusLabel: '69 911 km',
-    periodLabel: '11,9 ans',
-    summary: 'Géante gazeuse · 4 lunes galiléennes en orbite',
+    distanceLabel: '5.20 AU',
+    radiusLabel: '69,911 km',
+    periodLabel: '11.9 yrs',
+    summary: 'Gas giant · 4 Galilean moons in orbit',
   },
   {
     id: 'saturn',
-    name: 'Saturne',
+    name: 'Saturn',
     accent: '#E2C68A',
     orbitRadius: 56.5,
     radius: 2.2,
     orbitSpeed: 0.015,
     initialAngle: 0.42,
-    distanceLabel: '9,54 UA',
-    radiusLabel: '58 232 km',
-    periodLabel: '29,5 ans',
-    summary: 'Géante gazeuse · Anneaux de glace & division de Cassini',
+    distanceLabel: '9.54 AU',
+    radiusLabel: '58,232 km',
+    periodLabel: '29.5 yrs',
+    summary: 'Gas giant · Ice rings & Cassini Division',
   },
   {
     id: 'uranus',
@@ -145,10 +145,10 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 1.48,
     orbitSpeed: 0.010,
     initialAngle: 2.72,
-    distanceLabel: '19,2 UA',
-    radiusLabel: '25 362 km',
-    periodLabel: '84 ans',
-    summary: 'Géante de glace · Inclinaison axiale 97,8°',
+    distanceLabel: '19.2 AU',
+    radiusLabel: '25,362 km',
+    periodLabel: '84 yrs',
+    summary: 'Ice giant · 97.8° axial tilt',
   },
   {
     id: 'neptune',
@@ -158,10 +158,10 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 1.44,
     orbitSpeed: 0.0075,
     initialAngle: -1.15,
-    distanceLabel: '30,1 UA',
-    radiusLabel: '24 622 km',
-    periodLabel: '165 ans',
-    summary: 'Géante de glace · Vents supersoniques & méthane',
+    distanceLabel: '30.1 AU',
+    radiusLabel: '24,622 km',
+    periodLabel: '165 yrs',
+    summary: 'Ice giant · Supersonic methane winds',
   },
   // 4 Galilean Moons orbiting Jupiter
   {
@@ -173,38 +173,38 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 0.22,
     orbitSpeed: 0.42,
     initialAngle: 0.55,
-    distanceLabel: '421 700 km',
-    radiusLabel: '1 822 km',
-    periodLabel: '1,77 jours',
-    summary: 'Lune de Jupiter · Monde le plus volcanique',
+    distanceLabel: '421,700 km',
+    radiusLabel: '1,822 km',
+    periodLabel: '1.77 days',
+    summary: 'Moon of Jupiter · Most volcanically active world',
   },
   {
     id: 'europa',
-    name: 'Europe',
+    name: 'Europa',
     accent: '#D8CFC2',
     parent: 'jupiter',
     orbitRadius: 5.7,
     radius: 0.19,
     orbitSpeed: 0.27,
     initialAngle: 2.05,
-    distanceLabel: '671 034 km',
-    radiusLabel: '1 561 km',
-    periodLabel: '3,55 jours',
-    summary: 'Lune de Jupiter · Banquise fracturée & océan interne',
+    distanceLabel: '671,034 km',
+    radiusLabel: '1,561 km',
+    periodLabel: '3.55 days',
+    summary: 'Moon of Jupiter · Fractured ice shell & subsurface ocean',
   },
   {
     id: 'ganymede',
-    name: 'Ganymède',
+    name: 'Ganymede',
     accent: '#A69D91',
     parent: 'jupiter',
     orbitRadius: 7.4,
     radius: 0.30,
     orbitSpeed: 0.17,
     initialAngle: -0.95,
-    distanceLabel: '1 070 400 km',
-    radiusLabel: '2 634 km',
-    periodLabel: '7,15 jours',
-    summary: 'Lune de Jupiter · Plus grande lune du Système Solaire',
+    distanceLabel: '1,070,400 km',
+    radiusLabel: '2,634 km',
+    periodLabel: '7.15 days',
+    summary: 'Moon of Jupiter · Largest moon in the Solar System',
   },
   {
     id: 'callisto',
@@ -215,10 +215,10 @@ export const SOLAR_BODIES: BodyInfo[] = [
     radius: 0.27,
     orbitSpeed: 0.11,
     initialAngle: -2.45,
-    distanceLabel: '1 882 700 km',
-    radiusLabel: '2 410 km',
-    periodLabel: '16,7 jours',
-    summary: 'Lune de Jupiter · Surface glacée très cratérisée',
+    distanceLabel: '1,882,700 km',
+    radiusLabel: '2,410 km',
+    periodLabel: '16.7 days',
+    summary: 'Moon of Jupiter · Ancient heavily cratered ice crust',
   },
 ];
 
@@ -1039,22 +1039,22 @@ export function createSolarSystem(): SolarSystem {
     return tex;
   };
 
-  // Real 2K NASA / Solar System Scope textures for EVERY planet + Sun + Moon
-  const texSun = loadTex('/textures/2k_sun.jpg', true);
-  const texMercury = loadTex('/textures/2k_mercury.jpg', true);
-  const texVenus = loadTex('/textures/2k_venus_atmosphere.jpg', true);
-  const texMars = loadTex('/textures/2k_mars.jpg', true);
-  const texJupiter = loadTex('/textures/2k_jupiter.jpg', true);
-  const texSaturn = loadTex('/textures/2k_saturn.jpg', true);
-  const texUranus = loadTex('/textures/2k_uranus.jpg', true);
-  const texNeptune = loadTex('/textures/2k_neptune.jpg', true);
-  const texMoon = loadTex('/textures/2k_moon.jpg', true);
+  // Real 2K NASA / Solar System Scope textures (relative paths for GitHub Pages compatibility)
+  const texSun = loadTex('./textures/2k_sun.jpg', true);
+  const texMercury = loadTex('./textures/2k_mercury.jpg', true);
+  const texVenus = loadTex('./textures/2k_venus_atmosphere.jpg', true);
+  const texMars = loadTex('./textures/2k_mars.jpg', true);
+  const texJupiter = loadTex('./textures/2k_jupiter.jpg', true);
+  const texSaturn = loadTex('./textures/2k_saturn.jpg', true);
+  const texUranus = loadTex('./textures/2k_uranus.jpg', true);
+  const texNeptune = loadTex('./textures/2k_neptune.jpg', true);
+  const texMoon = loadTex('./textures/2k_moon.jpg', true);
 
-  const dayMap = loadTex('/textures/earth_atmos_2048.jpg', true);
-  const nightMap = loadTex('/textures/earth_lights_2048.png', true);
-  const specMap = loadTex('/textures/earth_specular_2048.jpg', false);
-  const normalMap = loadTex('/textures/earth_normal_2048.jpg', false);
-  const cloudMap = loadTex('/textures/earth_clouds_1024.png', true);
+  const dayMap = loadTex('./textures/earth_atmos_2048.jpg', true);
+  const nightMap = loadTex('./textures/earth_lights_2048.png', true);
+  const specMap = loadTex('./textures/earth_specular_2048.jpg', false);
+  const normalMap = loadTex('./textures/earth_normal_2048.jpg', false);
+  const cloudMap = loadTex('./textures/earth_clouds_1024.png', true);
 
   // 1. SUN AT ORIGIN (0,0,0) WITH 2K PHOTOSPHERE TEXTURE
   const sunInfo = SOLAR_BODIES[0];
